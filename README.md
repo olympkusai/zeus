@@ -1,4 +1,4 @@
-# Thunderstorm - Event Bus
+# Zeus - Event Bus
 
 **Problem**: Coupling business logic creates brittle systems. When user registers, you need to send email, log event, update analytics, create welcome sequence. Hardcoding these creates spaghetti.
 
@@ -74,7 +74,7 @@ bus.AddAction("user:created", 20, func(ctx context.Context, args ...interface{})
 ## Installation
 
 ```bash
-go get github.com/olympkusai/thunderstorm
+go get github.com/olympkusai/Zeus
 ```
 
 ## Quick Start
@@ -82,9 +82,9 @@ go get github.com/olympkusai/thunderstorm
 ### 1. Create Bus
 
 ```go
-import "github.com/olympkusai/thunderstorm"
+import "github.com/olympkusai/Zeus"
 
-bus := thunderstorm.New()
+bus := Zeus.New()
 ctx := context.Background()
 ```
 
@@ -345,8 +345,4 @@ bus.AddAction("event", 10, func(ctx context.Context, args ...interface{}) error 
 ✅ Zero dependencies  
 ✅ Fully tested
 
-## Next Steps
 
-- See `integration_example.go` for setup with database events
-- Check `.specs/INTEGRACAO_ADB_THUNDERSTORM.md` for ADB integration
-- Start with Actions, add Filters as needed
